@@ -1,10 +1,25 @@
 # Version 1.1
 
-- `readTCGA` has now new `method` for `rppa` (reverse phase protein array)  and `mRNA` (Merge transcriptome agilent) files
+- New parameter `allDataSets` for `downloadTCGA` that allows to download all files matching string in the `dataSet` parameter.
+- New documentation page `?datasetsTCGA`.
+- `readTCGA` has now new `method` for below files 
+    - `RPPA` (reverse phase protein array), 
+    - `mRNA` (Merge transcriptome agilent),
+    - `miRNASeq`
+    - `methylation` (methylation datasets)
 - `datasetsTCGA` documentation has been extended with new datasets for `rppa` and `mrna`
 - `downloadTCGA` now gives a warning when more than one file matches `dataSet` parameter, and downloads the first matched dataset without `FFPE` in the name. If all matching datasets have `FFPE` in the name then the first of them is downloaded.
 - `checkTCGA` now downloads also sizes with datasets names when one specifies `what` parameter to `DatSets`.
 - Updated tests for `checkTCGA`
+- Added new `installTCGA` function that can install all packages from RTCGA family.
+- Added new `convertTCGA` function that converts `data.frame`s from RTCGA family to Bioconductor classes.
+- New examples in `readTCGA` function documentation concerning the following datasets:
+    - `methylation`
+    - `RPPA`
+    - `mRNA`
+    - `miRNASeq`
+    - `isoforms`
+
 
 # Version 1.0
 

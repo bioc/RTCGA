@@ -13,4 +13,7 @@ Rd2.pdf
 ^\.travis\.yml$
 update_remote.ssh
 data2/
-
+devel/
+devel
+readTCGA_examples_section.R
+readTCGA_examples_section2.R

@@ -1,7 +1,5 @@
-# Sample .travis.yml for R projects
-
 language: r
-warnings_are_errors: true
+assert: false
 r_packages:
  - knitr
  - testthat
@@ -13,4 +11,11 @@ r_packages:
  - data.table
  - magrittr
  - xml2
+ - devtools
+r_github_packages:
+ - RTCGA/RTCGA.rnaseq
+ - RTCGA/RTCGA.clinical
+ - RTCGA/RTCGA.mutations
+bioc_packages:
+ - Biobase
 sudo: required
