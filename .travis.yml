@@ -12,10 +12,16 @@ r_packages:
  - magrittr
  - xml2
  - devtools
+ - rmarkdown
 r_github_packages:
  - RTCGA/RTCGA.rnaseq
  - RTCGA/RTCGA.clinical
  - RTCGA/RTCGA.mutations
+ - RTCGA/RTCGA.CNV
+ - RTCGA/RTCGA.PANCAN12
 bioc_packages:
  - Biobase
+ - GenomicRanges
+ - IRanges
+ - S4Vectors
 sudo: required
