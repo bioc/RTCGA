@@ -1,7 +1,7 @@
 Package: RTCGA
 Title: The Cancer Genome Atlas Data Integration
-Version: 1.0.0
-Date: 2015-08-05
+Version: 1.0.1
+Date: 2015-01-10
 Author: Marcin Kosinski <m.p.kosinski@gmail.com>, Przemyslaw Biecek
         <przemyslaw.biecek@gmail.com>
 Maintainer: Marcin Kosinski <m.p.kosinski@gmail.com>
@@ -17,13 +17,32 @@ Description: The Cancer Genome Atlas (TCGA) Data Portal provides a
         science and improvement of patients' treatment. Furthermore,
         RTCGA package transforms TCGA data to tidy form which is
         convenient to use.
-BugReports: https://github.com/MarcinKosinski/RTCGA/issues
+BugReports: https://github.com/RTCGA/RTCGA/issues
 License: GPL-2
 LazyLoad: yes
 LazyData: yes
-Depends: R (>= 3.2.0), knitr
-Imports: XML, assertthat, stringi, rvest, data.table, magrittr, xml2
-Suggests: testthat, pander
+Depends:
+    R (>= 3.2.0),
+    knitr
+Imports:
+    XML,
+    assertthat,
+    stringi,
+    rvest,
+    data.table,
+    magrittr,
+    xml2,
+    devtools
+Suggests:
+    testthat,
+    pander,
+    Biobase,
+    GenomicRanges,
+    IRanges,
+    S4Vectors,
+    RTCGA.rnaseq,
+    RTCGA.clinical,
+    RTCGA.mutations
 Repository: Bioconductor
 biocViews: Software
 VignetteBuilder: knitr
