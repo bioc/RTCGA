@@ -16,7 +16,7 @@
 #'      }
 #' @return 
 #' \itemize{
-#'      \item If \code{what='DataSets'} a vector of available datasets' names to pass to the \link{downloadTCGA} function.
+#'      \item If \code{what='DataSets'} a data.frame of available datasets' names (to pass to the \link{downloadTCGA} function) and sizes.
 #'      \item If \code{what='Dates'} a vector of available dates to pass to the \link{downloadTCGA} function.
 #'      }
 #' @param what One of \code{DataSets} or \code{Dates}.     
@@ -46,51 +46,15 @@
 #' # TCGA datasets' names availability for 
 #' # current release date and cancer type.
 #' 
-#' releaseDate <- '2015-06-01'
+#' releaseDate <- '2015-08-21'
 #' cancerTypes <- c('OV', 'BRCA')
 #' 
 #' cancerTypes %>% sapply(function(element){
-#'   grep(x = checkTCGA('DataSets', element, releaseDate), 
+#'   grep(x = checkTCGA('DataSets', element, releaseDate)[, 1], 
 #'       pattern = 'humanmethylation450', value = TRUE) %>%
 #'        as.vector()
 #'        })
 #'        
-#' #############################      
-#'
-#' # TCGA genes' names and availability 
-#' # in Merge_rnaseqv2__... dataset 
-#' dir.create('data2')
-#' sapply( cancerTypes, function(element){
-#' tryCatch({
-#'     downloadTCGA( cancerTypes = element, 
-#'                   dataSet = paste0('rnaseqv2__illuminahiseq_rnaseqv2__unc',
-#'                   '_edu__Level_3__RSEM_genes_normalized__data.Level'),
-#'                   destDir = 'data2', 
-#'                   date = releaseDate )},
-#'     error = function(cond){
-#'         cat('Error: Maybe there weren't rnaseq data for ', element, ' cancer.\n')
-#'     }
-#' )
-#' })
-#' 
-#' # Paths to rna-seq data
-#' 
-#' sapply( cohorts, function( element ){
-#' folder <- grep( paste0( '(_',element,'\\.', '|','_',element,'-FFPE)', '.*rnaseqv2'),
-#'                list.files('data2/'), value = TRUE)
-#' file <- grep( paste0(element, '.*rnaseqv2'), list.files( paste0( 'data2/',folder ) ),
-#'               value = TRUE)
-#' path <- paste0( 'data2/', folder, '/', file )
-#' assign( value = path, x = paste0(element, '.rnaseq.path'), envir = .GlobalEnv)
-#' })
-#' 
-#' rnaseqDir <- 'OV.rnaseq'
-#' 
-#'                 
-#' fread(rnaseqDir, select = c(1),
-#'       data.table = FALSE,
-#'       colClasses = 'character')[-1, 1]       
-#' 
 #' }
 #' @family RTCGA
 #' @aliases checkTCGA
@@ -122,23 +86,16 @@ availableDataSets <- function(cancerType, date = NULL) {
     filesParentURL <- parentURL(lastReleaseDate, element = cancerType)  #downloadTCGA.r
     
     # get content of index page
-    elementIndex <- tryCatch(readLines(filesParentURL), error = function(e) stop(paste("Probably dataset from this date needs authentication. \n \tCouldn't check available datasets' names.", 
-        "\n \tTry manually on", filesParentURL)))
-    
-    # stopped working suddenly after change of indexing of pages like that
-    # http://gdac.broadinstitute.org/runs/stddata__2015_04_02/data/BRCA/20150402/ looks bad, but works fine....  need to fix this mess
-    dataSetsName <- sapply(elementIndex, function(element) {
-        gsub(".*gdac.broadinstitute.org(.*)\".*", "\\1", element)
-    })
-    
-    dataSetsName <- sapply(elementIndex, function(element) {
-        unlist(stri_extract_all_regex(pattern = "_.*tar\\.gz", str = element))
-    })
-    x <- dataSetsName %>% unlist() %>% na.omit() %>% unique()
+    readHTMLTable(filesParentURL)[[1]][-c(1:2), c(2,4)] -> check
+    check[!grepl('md5', check[,1]) , ] -> check
+    check[!grepl('aux', check[,1]) , ] -> check
+    check[!grepl('mage-tab', check[,1]) , ] -> check
+    check[, 1] <- gsub("gdac.broadinstitute.org_", "", check[, 1])
+    na.omit(check) -> check
+    rownames(check) <- 1:nrow(check)
+    return(check[, c(2,1)])
     
     
-    # cat available dataSets' names
-    gsub(paste0("_", cancerType), cancerType, unique(grep(x = x, pattern = paste0("_", cancerType), value = TRUE)))
     
 }
 
@@ -146,7 +103,7 @@ availableDataSets <- function(cancerType, date = NULL) {
 # Misc function
 availableDates <- function() {
     
-    if (!exists(x = ".availableDates2", envir = .RTCGAEnv)) {
+    if (!exists(x = ".availableDates3", envir = .RTCGAEnv)) {
         # happens only once
         readLines("http://gdac.broadinstitute.org/runs/") %>% assign(x = ".gdacContent", value = ., envir = .RTCGAEnv)
         
@@ -154,7 +111,8 @@ availableDates <- function() {
             substring(first = 10, last = 19) %>% assign(x = ".availableDates", value = ., envir = .RTCGAEnv)
         
         get(".availableDates", envir = .RTCGAEnv) %>% gsub(pattern = "^[^0-9]{10}", replacement = "") %>% gsub(pattern = "_", replacement = "-", 
-            fixed = TRUE) %>% assign(x = ".availableDates2", value = ., envir = .RTCGAEnv)
+                                                                                                               fixed = TRUE) %>% assign(x = ".availableDates2", value = ., envir = .RTCGAEnv)
+        
         ############################################ 
         
         xml2::read_html("http://gdac.broadinstitute.org/runs/stddata__latest/") %>% html_nodes("h3") %>% html_text() %>%
