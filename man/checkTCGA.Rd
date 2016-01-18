@@ -68,8 +68,7 @@ cancerTypes \%>\% sapply(function(element){
 }
 \seealso{
 Other RTCGA: \code{\link{RTCGA-package}},
-  \code{\link{convertTCGA}}, \code{\link{datasetsTCGA}},
-  \code{\link{downloadTCGA}}, \code{\link{infoTCGA}},
-  \code{\link{installTCGA}}, \code{\link{readTCGA}}
+  \code{\link{datasetsTCGA}}, \code{\link{downloadTCGA}},
+  \code{\link{infoTCGA}}, \code{\link{readTCGA}}
 }
 
