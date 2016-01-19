@@ -20,7 +20,7 @@ release date (check all dates of release with \code{checkTCGA('Dates')}) are inc
 }
 \details{
 For more detailed information visit \pkg{RTCGA.data}  website
-\href{https://rtcga.github.io/RTCGA}{https://rtcga.github.io/RTCGA}. One can install all data packages with \code{installTCGA} (devel).
+\href{https://rtcga.github.io/RTCGA}{https://rtcga.github.io/RTCGA}. One can install all data packages with \link{installTCGA}.
 }
 \examples{
 
@@ -57,7 +57,8 @@ Witold Chodor [aut] \email{ witoldchodor@gmail.com }
 }
 \seealso{
 Other RTCGA: \code{\link{RTCGA-package}},
-  \code{\link{checkTCGA}}, \code{\link{downloadTCGA}},
-  \code{\link{infoTCGA}}, \code{\link{readTCGA}}
+  \code{\link{checkTCGA}}, \code{\link{convertTCGA}},
+  \code{\link{downloadTCGA}}, \code{\link{infoTCGA}},
+  \code{\link{installTCGA}}, \code{\link{readTCGA}}
 }
 

@@ -2,8 +2,11 @@
 
 export("%>%")
 export(checkTCGA)
+export(convertPANCAN12)
+export(convertTCGA)
 export(downloadTCGA)
 export(infoTCGA)
+export(installTCGA)
 export(readTCGA)
 import(knitr)
 importFrom(XML,readHTMLTable)
