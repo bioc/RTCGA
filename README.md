@@ -1,6 +1,13 @@
 [![Travis-CI Build Status](https://travis-ci.org/RTCGA/RTCGA.svg?branch=master)](https://travis-ci.org/RTCGA/RTCGA)
+[![Project Status: Active - The project has reached a stable, usable state and is being actively developed.](http://www.repostatus.org/badges/latest/active.svg)](http://www.repostatus.org/#active)[![Pending Pull-Requests](http://githubbadges.herokuapp.com/RTCGA/RTCGA/pulls.svg?style=flat)](https://github.com/RTCGA/RTCGA/pulls)
+[![Github Issues](http://githubbadges.herokuapp.com/RTCGA/RTCGA/issues.svg)](https://github.com/RTCGA/RTCGA/issues)
 
 # The family of R packages containing TCGA data
+
+
+![Workflow of RTCGA package](https://raw.githubusercontent.com/RTCGA/RTCGA/master/RTCGA_workflow_ver3.png)
+
+
 
 Data packages submitted to Bioconductor
 
@@ -15,7 +22,7 @@ Data packages submitted to Bioconductor
 - [RTCGA.methylation](http://bioconductor.org/packages/RTCGA.methylation/)
 
 
-### Installation of packages from the `RTCGA.data` family: 
+### Installation of packages from the `RTCGA` family: 
 
 Windows users:
 > Make sure you have [rtools](http://cran.r-project.org/bin/windows/Rtools/) installed on your computer.
@@ -87,7 +94,10 @@ browseVignettes("RTCGA")
 >
 > Przemysław Biecek, przemyslaw.biecek@gmail.com
 >
-> Witold Chorod, witoldchodor@gmail.com
+> Witold Chodor, witoldchodor@gmail.com
 >
 
 This repository is synchronized with it's [Bioconductor's SVN devel mirror](https://hedgehog.fhcrc.org/bioconductor/trunk/madman/Rpacks/RTCGA).
+
+
+![RTCGA logo](https://avatars3.githubusercontent.com/u/15612915?v=3&s=300)

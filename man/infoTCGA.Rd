@@ -15,16 +15,26 @@ Function restores codes and counts for each cohort from TCGA project.
 \examples{
 
 infoTCGA()
-
+library(magrittr)
 (cohorts <- infoTCGA() \%>\% 
 rownames() \%>\% 
    sub('-counts', '', x=.))
 
 }
+\author{
+Marcin Kosinski, \email{m.p.kosinski@gmail.com}
+}
 \seealso{
+\pkg{RTCGA} website \href{http://rtcga.github.io/RTCGA/Download.html}{http://rtcga.github.io/RTCGA/Download.html}.
+
 Other RTCGA: \code{\link{RTCGA-package}},
-  \code{\link{checkTCGA}}, \code{\link{convertTCGA}},
-  \code{\link{datasetsTCGA}}, \code{\link{downloadTCGA}},
-  \code{\link{installTCGA}}, \code{\link{readTCGA}}
+  \code{\link{boxplotTCGA}}, \code{\link{checkTCGA}},
+  \code{\link{convertTCGA}}, \code{\link{datasetsTCGA}},
+  \code{\link{downloadTCGA}},
+  \code{\link{expressionsTCGA}}, \code{\link{heatmapTCGA}},
+  \code{\link{installTCGA}}, \code{\link{kmTCGA}},
+  \code{\link{mutationsTCGA}}, \code{\link{pcaTCGA}},
+  \code{\link{readTCGA}}, \code{\link{survivalTCGA}},
+  \code{\link{theme_RTCGA}}
 }
 

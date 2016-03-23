@@ -12,13 +12,27 @@ r_packages:
  - magrittr
  - xml2
  - devtools
+ - dplyr
+ - survival
+ - ggplot2
+ - tidyr
  - rmarkdown
+ - ggthemes
+ - purrr
+ - viridis
+ - scales
 r_github_packages:
  - RTCGA/RTCGA.rnaseq
  - RTCGA/RTCGA.clinical
  - RTCGA/RTCGA.mutations
  - RTCGA/RTCGA.CNV
  - RTCGA/RTCGA.PANCAN12
+ - RTCGA/RTCGA.RPPA
+ - RTCGA/RTCGA.mRNA
+ - RTCGA/RTCGA.miRNASeq
+ - RTCGA/RTCGA.methylation
+ - kassambara/survminer
+ - vqv/ggbiplot
 bioc_packages:
  - Biobase
  - GenomicRanges

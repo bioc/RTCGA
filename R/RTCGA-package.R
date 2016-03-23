@@ -12,16 +12,31 @@
 #' Marcin Kosinski [aut, cre] \email{ m.p.kosinski@@gmail.com } \cr
 #' Przemyslaw Biecek [aut] \email{ przemyslaw.biecek@@gmail.com }
 #' 
+#' @seealso 
+#' 
+#' \pkg{RTCGA} website \href{http://rtcga.github.io/RTCGA}{http://rtcga.github.io/RTCGA}.
+#' 
 #' @importFrom xml2 read_html
 #' @importFrom rvest html_nodes
 #' @importFrom rvest html_attr
 #' @importFrom rvest html_text
 #' @import knitr
+#' @import dplyr
 #' @importFrom data.table fread
 #' @importFrom stringi stri_extract_all_regex
 #' @importFrom assertthat assert_that
 #' @importFrom XML readHTMLTable
 #' @importFrom devtools install_github
+#' @import survminer
+#' @import survival
+#' @importFrom viridis scale_fill_viridis
+#' @importFrom scales comma
+#' @importFrom ggthemes theme_pander
+#' @importFrom ggthemes scale_colour_tableau
+#' @importFrom ggthemes scale_fill_tableau
+#' @import ggplot2
+#' @importFrom ggbiplot ggbiplot
+#' @importFrom purrr map_if
 #' 
 #' @examples
 #' \dontrun{
@@ -33,14 +48,3 @@
 #' @aliases RTCGA
 invisible(NULL)
 
-#' Pipe operator
-#'
-#' See \code{\link[magrittr]{\%>\%}} for more details.
-#'
-#' @name %>%
-#' @rdname pipe
-#' @keywords internal
-#' @export
-#' @importFrom magrittr %>%
-#' @usage lhs \%>\% rhs
-NULL 
