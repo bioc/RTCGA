@@ -21,17 +21,17 @@ pcaTCGA(x, group.names, title = "", return.pca = FALSE, scale = TRUE,
 
 \item{center}{As in \link{prcomp}.}
 
-\item{var.scale}{As in \link{ggbiplot}.}
+\item{var.scale}{As in \code{ggbiplot}.}
 
-\item{obs.scale}{As in \link{ggbiplot}.}
+\item{obs.scale}{As in \code{ggbiplot}.}
 
-\item{ellipse}{As in \link{ggbiplot}.}
+\item{ellipse}{As in \code{ggbiplot}.}
 
-\item{circle}{As in \link{ggbiplot}.}
+\item{circle}{As in \code{ggbiplot}.}
 
-\item{var.axes}{As in \link{ggbiplot}.}
+\item{var.axes}{As in \code{ggbiplot}.}
 
-\item{alpha}{As in \link{ggbiplot}.}
+\item{alpha}{As in \code{ggbiplot}.}
 
 \item{add.lines}{Should axis lines be added to plot.}
 
@@ -43,6 +43,21 @@ If not, then only PCA plot is returned.
 }
 \description{
 Plots Two Main Components of Principal Component Analysis
+}
+\section{ggbiplot}{
+
+
+This function is based on \href{https://github.com/vqv/ggbiplot}{https://github.com/vqv/ggbiplot} 
+which had to be copied to \pkg{RTCGA} because \code{Bioconductor} does not support 
+remote dependencies from \code{GitHub}.
+}
+
+\section{Issues}{
+
+
+If you have any problems, issues or think that something is missing or is not
+clear please post an issue on 
+\href{https://github.com/RTCGA/RTCGA/issues}{https://github.com/RTCGA/RTCGA/issues}.
 }
 \examples{
 
@@ -60,10 +75,9 @@ pcaTCGA(BRCA.OV.HNSC.rnaseq.cancer, "cohort", return.pca = TRUE) -> pca.rnaseq
 pca.rnaseq$plot
 pca.rnaseq$pca
 }
+
 }
 \author{
-Marcin Kosinski, \email{m.p.kosinski@gmail.com}
-
 Marcin Kosinski, \email{m.p.kosinski@gmail.com}
 }
 \seealso{

@@ -35,6 +35,13 @@ to remove the legend use legend = "none".}
 \description{
 Function creates boxplots (\link{geom_boxplot}) for TCGA Datasets.
 }
+\section{Issues}{
+
+
+If you have any problems, issues or think that something is missing or is not
+clear please post an issue on 
+\href{https://github.com/RTCGA/RTCGA/issues}{https://github.com/RTCGA/RTCGA/issues}.
+}
 \examples{
 library(RTCGA.rnaseq)
 # perfrom plot
@@ -81,12 +88,16 @@ ACC_BLCA_BRCA_OV.rnaseq \%>\%
 	mutate(TP53 = ifelse(!is.na(Variant_Classification), "Mut", "WILD")) \%>\%
 	select(cohort, MET, TP53) -> ACC_BLCA_BRCA_OV.rnaseq_TP53mutations
 
-boxplotTCGA(ACC_BLCA_BRCA_OV.rnaseq_TP53mutations, "reorder(cohort,log1p(MET), median)", "log1p(MET)", 
-xlab = "Cohort Type", ylab = "Logarithm of MET", legend.title = "Cohorts", legend = "bottom",
+boxplotTCGA(ACC_BLCA_BRCA_OV.rnaseq_TP53mutations,
+ "reorder(cohort,log1p(MET), median)", "log1p(MET)", 
+xlab = "Cohort Type", ylab = "Logarithm of MET",
+ legend.title = "Cohorts", legend = "bottom",
 facet.names = c("TP53"))
 
-boxplotTCGA(ACC_BLCA_BRCA_OV.rnaseq_TP53mutations, "reorder(cohort,log1p(MET), median)", "log1p(MET)", 
-xlab = "Cohort Type", ylab = "Logarithm of MET", legend.title = "Cohorts", legend = "bottom",
+boxplotTCGA(ACC_BLCA_BRCA_OV.rnaseq_TP53mutations,
+ "reorder(cohort,log1p(MET), median)", "log1p(MET)", 
+xlab = "Cohort Type", ylab = "Logarithm of MET",
+ legend.title = "Cohorts", legend = "bottom",
 fill = c("TP53"))
 
 

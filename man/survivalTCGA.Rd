@@ -4,7 +4,11 @@
 \alias{survivalTCGA}
 \title{Extract Survival Information From RTCGA.clinical Datasets}
 \usage{
-survivalTCGA(..., extract.cols = NULL, extract.names = FALSE)
+survivalTCGA(..., extract.cols = NULL, extract.names = FALSE,
+  barcode.name = "patient.bcr_patient_barcode",
+  event.name = "patient.vital_status",
+  days.to.followup.name = "patient.days_to_last_followup",
+  days.to.death.name = "patient.days_to_death")
 }
 \arguments{
 \item{...}{A data.frame or data.frames from TCGA study containing clinical informations. See \link[RTCGA.clinical]{clinical}.}
@@ -12,17 +16,38 @@ survivalTCGA(..., extract.cols = NULL, extract.names = FALSE)
 \item{extract.cols}{A character specifing the names of extra columns to be extracted with survival information.}
 
 \item{extract.names}{Logical, whether to extract names of passed data.frames in \code{...}.}
+
+\item{barcode.name}{A character with the name of \code{bcr_patient_barcode} which differs between TCGA releases. 
+By default is the name from the newest release date \code{tail(checkTCGA('Dates'),1)}.}
+
+\item{event.name}{A character with the name of \code{patient.vital_status} which differs between TCGA releases. 
+By default is the name from the newest release date \code{tail(checkTCGA('Dates'),1)}.}
+
+\item{days.to.followup.name}{A character with the name of \code{patient.days_to_last_followup} which differs between TCGA releases. 
+By default is the name from the newest release date \code{tail(checkTCGA('Dates'),1)}.}
+
+\item{days.to.death.name}{A character with the name of \code{patient.days_to_death} which differs between TCGA releases. 
+By default is the name from the newest release date \code{tail(checkTCGA('Dates'),1)}.}
 }
 \value{
 A data.frame containing information about times and censoring for specific \code{bcr_patient_barcode}.
+The name passed in \code{barcode.name} is changed to \code{bcr_patient_barcode}.
 }
 \description{
 Extracts survival information from clicnial datasets from TCGA project.
 }
 \note{
 Input data.frames should contain columns \code{patient.bcr_patient_barcode}, 
-\code{patient.vital_status}, \code{patient.days_to_last_followup}, \code{patient.days_to_death}. 
+\code{patient.vital_status}, \code{patient.days_to_last_followup}, \code{patient.days_to_death} or theyir previous
+equivalents. 
 It is recommended to use datasets from \link[RTCGA.clinical]{clinical}.
+}
+\section{Issues}{
+
+
+If you have any problems, issues or think that something is missing or is not
+clear please post an issue on 
+\href{https://github.com/RTCGA/RTCGA/issues}{https://github.com/RTCGA/RTCGA/issues}.
 }
 \examples{
 

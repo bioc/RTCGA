@@ -24,7 +24,13 @@
 #'  These color maps are designed in such a way that they will analytically be perfectly perceptually-uniform, 
 #'  both in regular form and also when converted to black-and-white. 
 #'  They are also designed to be perceived by readers with the most common form of color blindness.
-#'  
+#' 
+#' @section Issues:
+#' 
+#' If you have any problems, issues or think that something is missing or is not
+#' clear please post an issue on 
+#' \href{https://github.com/RTCGA/RTCGA/issues}{https://github.com/RTCGA/RTCGA/issues}.
+#'    
 #' @author 
 #' Marcin Kosinski, \email{m.p.kosinski@@gmail.com}
 #' @seealso 
@@ -107,7 +113,7 @@ heatmapTCGA <- function(data, x, y, fill,
 		#theme_RTCGA() +
 		scale_fill_viridis(name=legend.title, label=comma) +
 		coord_equal() +
-		labs(x=NULL, y=NULL, title=title) +
+		labs(title=title) +
 		theme(axis.ticks=element_blank(),
 					axis.text=element_text(size=7),
 					legend.title=element_text(size=8),

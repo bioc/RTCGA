@@ -6,7 +6,8 @@
 \usage{
 kmTCGA(x, times = "times", status = "patient.vital_status",
   explanatory.names = "1", main = "Survival Curves", risk.table = TRUE,
-  conf.int = TRUE, return.survfit = FALSE, pval = FALSE, ...)
+  risk.table.y.text = FALSE, conf.int = TRUE, return.survfit = FALSE,
+  pval = FALSE, ...)
 }
 \arguments{
 \item{x}{A \code{data.frame} containing survival information. See \link{survivalTCGA}.}
@@ -21,6 +22,8 @@ kmTCGA(x, times = "times", status = "patient.vital_status",
 
 \item{risk.table}{Whether to show risk tables.}
 
+\item{risk.table.y.text}{Whether to show long strata names in legend of the risk table.}
+
 \item{conf.int}{Whether to show confidence intervals.}
 
 \item{return.survfit}{Should return survfit object additionaly to survival plot?}
@@ -31,6 +34,13 @@ kmTCGA(x, times = "times", status = "patient.vital_status",
 }
 \description{
 Plots Kaplan-Meier estimates of survival curves for survival data.
+}
+\section{Issues}{
+
+
+If you have any problems, issues or think that something is missing or is not
+clear please post an issue on 
+\href{https://github.com/RTCGA/RTCGA/issues}{https://github.com/RTCGA/RTCGA/issues}.
 }
 \examples{
 
