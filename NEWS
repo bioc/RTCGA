@@ -1,3 +1,7 @@
+# Version 1.3.3
+
+- Fixed examples in `expressionsTCGA` that broke after changes in dplyr, while moving to `tibble`s.
+
 # Version 1.1.15
 
 - New functions `heatmapTCGA`, `boxplotTCGA`, `kmTCGA`, `pcaTCGA`, `theme_RTCGA` for plotting [https://rtcga.github.io/RTCGA/Visualizations.html](https://rtcga.github.io/RTCGA/Visualizations.html)
