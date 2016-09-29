@@ -143,3 +143,4 @@ Other RTCGA: \code{\link{RTCGA-package}},
   \code{\link{pcaTCGA}}, \code{\link{readTCGA}},
   \code{\link{survivalTCGA}}, \code{\link{theme_RTCGA}}
 }
+
