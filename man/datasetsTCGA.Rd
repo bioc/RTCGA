@@ -42,15 +42,16 @@ library(RTCGA)
 ?installTCGA
 
 ## Bioconductor releases
-source('http://bioconductor.org/biocLite.R')
-biocLite(RTCGA.clinical)
-biocLite(RTCGA.mutations)
-biocLite(RTCGA.rnaseq)
-biocLite(RTCGA.CNV)
-biocLite(RTCGA.RPPA)
-biocLite(RTCGA.mRNA)
-biocLite(RTCGA.miRNASeq)
-biocLite(RTCGA.methylation)
+if (!requireNamespace("BiocManager", quietly=TRUE))
+    install.packages("BiocManager")
+BiocManager::install(RTCGA.clinical)
+BiocManager::install(RTCGA.mutations)
+BiocManager::install(RTCGA.rnaseq)
+BiocManager::install(RTCGA.CNV)
+BiocManager::install(RTCGA.RPPA)
+BiocManager::install(RTCGA.mRNA)
+BiocManager::install(RTCGA.miRNASeq)
+BiocManager::install(RTCGA.methylation)
 
 # use cases and examples + more data info
 browseVignettes('RTCGA')

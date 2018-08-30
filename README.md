@@ -68,7 +68,7 @@ To get started, install the latest version of **RTCGA** from Bioconductor:
 ```{R}
 BiocInstaller::useDevel() # swiches to devel branch of Bioconductor
 source("https://bioconductor.org/biocLite.R") # downloads bioClite function
-biocLite("RTCGA") # installs a package
+BiocManager::install("RTCGA") # installs a package
 ```
 or use below code to download the development version which is like to be less bugged than the release version on Bioconductor:
 ```{R}
