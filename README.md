@@ -30,20 +30,21 @@ Windows users:
 ```{R}
 # packages that are published to devel version of Bioconductor
 BiocInstaller::useDevel() # swiches to devel branchof Bioconductor - don't use this line if you are interested in release versions
-source("https://bioconductor.org/biocLite.R") # downloads bioClite function
+if (!requireNamespace("BiocManager", quietly=TRUE)) # downloads bioClite function
+    install.packages("BiocManager") # downloads bioClite function
 ```
 
 |package           |installation                    |help           |vignettes                              |
 |:-----------------|:-------------------------------|:--------------|:--------------------------------------|
-|RTCGA.rnaseq      |`biocLite('RTCGA.rnaseq')`      |`?rnaseq`      |`browseVignettes('RTCGA.rnaseq')`      |
-|RTCGA.clinical    |`biocLite('RTCGA.clinical')`    |`?clinical`    |`browseVignettes('RTCGA.clinical')`    |
-|RTCGA.mutations   |`biocLite('RTCGA.mutations')`   |`?mutations`   |`browseVignettes('RTCGA.mutations')`   |
-|RTCGA.mRNA        |`biocLite('RTCGA.mRNA')`        |`?mRNA`        |`browseVignettes('RTCGA.mRNA')`        |
-|RTCGA.miRNASeq    |`biocLite('RTCGA.miRNASeq')`    |`?miRNASeq`    |`browseVignettes('RTCGA.miRNASeq')`    |
-|RTCGA.PANCAN12    |`biocLite('RTCGA.PANCAN12')`    |`?pancan12`    |`browseVignettes('RTCGA.PANCAN12')`    |
-|RTCGA.RPPA        |`biocLite('RTCGA.RPPA')`        |`?RPPA`        |`browseVignettes('RTCGA.RPPA')`        |
-|RTCGA.CNV         |`biocLite('RTCGA.CNV')`         |`?CNV`         |`browseVignettes('RTCGA.CNV')`         |
-|RTCGA.methylation |`biocLite('RTCGA.methylation')` |`?methylation` |`browseVignettes('RTCGA.methylation')` |
+|RTCGA.rnaseq      |`BiocManager::install('RTCGA.rnaseq')`      |`?rnaseq`      |`browseVignettes('RTCGA.rnaseq')`      |
+|RTCGA.clinical    |`BiocManager::install('RTCGA.clinical')`    |`?clinical`    |`browseVignettes('RTCGA.clinical')`    |
+|RTCGA.mutations   |`BiocManager::install('RTCGA.mutations')`   |`?mutations`   |`browseVignettes('RTCGA.mutations')`   |
+|RTCGA.mRNA        |`BiocManager::install('RTCGA.mRNA')`        |`?mRNA`        |`browseVignettes('RTCGA.mRNA')`        |
+|RTCGA.miRNASeq    |`BiocManager::install('RTCGA.miRNASeq')`    |`?miRNASeq`    |`browseVignettes('RTCGA.miRNASeq')`    |
+|RTCGA.PANCAN12    |`BiocManager::install('RTCGA.PANCAN12')`    |`?pancan12`    |`browseVignettes('RTCGA.PANCAN12')`    |
+|RTCGA.RPPA        |`BiocManager::install('RTCGA.RPPA')`        |`?RPPA`        |`browseVignettes('RTCGA.RPPA')`        |
+|RTCGA.CNV         |`BiocManager::install('RTCGA.CNV')`         |`?CNV`         |`browseVignettes('RTCGA.CNV')`         |
+|RTCGA.methylation |`BiocManager::install('RTCGA.methylation')` |`?methylation` |`browseVignettes('RTCGA.methylation')` |
 
 ```{R}
 # version of packages held at github.com/RTCGA - I try to keep them with the same state as devel versions of Bioconductor
@@ -67,7 +68,8 @@ To get started, install the latest version of **RTCGA** from Bioconductor:
 
 ```{R}
 BiocInstaller::useDevel() # swiches to devel branch of Bioconductor
-source("https://bioconductor.org/biocLite.R") # downloads bioClite function
+if (!requireNamespace("BiocManager", quietly=TRUE)) # downloads bioClite function
+    install.packages("BiocManager") # downloads bioClite function
 BiocManager::install("RTCGA") # installs a package
 ```
 or use below code to download the development version which is like to be less bugged than the release version on Bioconductor:

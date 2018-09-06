@@ -49,7 +49,7 @@ if (!requireNamespace("BiocManager", quietly=TRUE))
 BiocManager::install("RTCGA.clinical") 
 BiocManager::install("RTCGA.rnaseq") 
 BiocManager::install("RTCGA.mutations") 
-BiocManager::install("RTCGA.cnv") # or developers version biocLite("mi2-warsaw/RTCGA.cnv")
+BiocManager::install("RTCGA.cnv") # or developers version BiocManager::install("mi2-warsaw/RTCGA.cnv")
 ```
 
 # Patient's barcode as a key to merge data 
@@ -196,7 +196,7 @@ where `cohort` corresponds to a specific Cohort of patients and `package` corres
 
 
 ```{r}
-#library(devtools);biocLite("mi2-warsaw/RTCGA.tools") 
+#library(devtools);BiocManager::install("mi2-warsaw/RTCGA.tools") 
 ```
 
 
