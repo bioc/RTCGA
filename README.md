@@ -29,7 +29,7 @@ Windows users:
 
 ```{R}
 # packages that are published to devel version of Bioconductor
-BiocInstaller::useDevel() # swiches to devel branchof Bioconductor - don't use this line if you are interested in release versions
+BiocManager::install(version = "devel") # swiches to devel branch of Bioconductor - don't use this line if you are interested in release versions
 if (!requireNamespace("BiocManager", quietly=TRUE)) # downloads bioClite function
     install.packages("BiocManager") # downloads bioClite function
 ```
@@ -67,7 +67,7 @@ Packages from the `RTCGA.data` - family/factory are based on the `RTCGA` package
 To get started, install the latest version of **RTCGA** from Bioconductor:
 
 ```{R}
-BiocInstaller::useDevel() # swiches to devel branch of Bioconductor
+BiocManager::install(version = "devel") # swiches to devel branch of Bioconductor
 if (!requireNamespace("BiocManager", quietly=TRUE)) # downloads bioClite function
     install.packages("BiocManager") # downloads bioClite function
 BiocManager::install("RTCGA") # installs a package
