@@ -4,9 +4,12 @@
 \alias{installTCGA}
 \title{Install packages from RTCGA family}
 \usage{
-installTCGA(packages = c("RTCGA.clinical", "RTCGA.mutations", "RTCGA.rnaseq",
-  "RTCGA.RPPA", "RTCGA.mRNA", "RTCGA.CNV", "RTCGA.miRNASeq", "RTCGA.PANCAN12",
-  "RTCGA.methylation"), build_vignettes = TRUE, ...)
+installTCGA(
+  packages = c("RTCGA.clinical", "RTCGA.mutations", "RTCGA.rnaseq", "RTCGA.RPPA",
+    "RTCGA.mRNA", "RTCGA.CNV", "RTCGA.miRNASeq", "RTCGA.PANCAN12", "RTCGA.methylation"),
+  build_vignettes = TRUE,
+  ...
+)
 }
 \arguments{
 \item{packages}{A character specifing the names of the data packages to be installed. By default installs all packages.}
@@ -25,6 +28,7 @@ If you have any problems, issues or think that something is missing or is not
 clear please post an issue on 
 \href{https://github.com/RTCGA/RTCGA/issues}{https://github.com/RTCGA/RTCGA/issues}.
 }
+
 \examples{
 
 \dontrun{
@@ -33,20 +37,27 @@ installTCGA('RTCGA.clinical')
 }
 
 }
-\author{
-Marcin Kosinski, \email{m.p.kosinski@gmail.com}
-}
 \seealso{
 \pkg{RTCGA} website \href{http://rtcga.github.io/RTCGA}{http://rtcga.github.io/RTCGA}.
 
-Other RTCGA: \code{\link{RTCGA-package}},
-  \code{\link{boxplotTCGA}}, \code{\link{checkTCGA}},
-  \code{\link{convertTCGA}}, \code{\link{datasetsTCGA}},
-  \code{\link{downloadTCGA}},
-  \code{\link{expressionsTCGA}}, \code{\link{heatmapTCGA}},
-  \code{\link{infoTCGA}}, \code{\link{kmTCGA}},
-  \code{\link{mutationsTCGA}}, \code{\link{pcaTCGA}},
-  \code{\link{readTCGA}}, \code{\link{survivalTCGA}},
-  \code{\link{theme_RTCGA}}
+Other RTCGA: 
+\code{\link{RTCGA-package}},
+\code{\link{boxplotTCGA}()},
+\code{\link{checkTCGA}()},
+\code{\link{convertTCGA}()},
+\code{\link{datasetsTCGA}},
+\code{\link{downloadTCGA}()},
+\code{\link{expressionsTCGA}()},
+\code{\link{heatmapTCGA}()},
+\code{\link{infoTCGA}()},
+\code{\link{kmTCGA}()},
+\code{\link{mutationsTCGA}()},
+\code{\link{pcaTCGA}()},
+\code{\link{readTCGA}()},
+\code{\link{survivalTCGA}()},
+\code{\link{theme_RTCGA}()}
 }
-
+\author{
+Marcin Kosinski, \email{m.p.kosinski@gmail.com}
+}
+\concept{RTCGA}
