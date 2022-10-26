@@ -18,11 +18,12 @@ pcaTCGA(
   var.axes = FALSE,
   alpha = 0.8,
   add.lines = TRUE,
+  ggtheme = theme_RTCGA(),
   ...
 )
 }
 \arguments{
-\item{x}{A \code{data.frame} containing i.e. expressions information. See \link{expressionsTCGA}.}
+\item{x}{A \code{data.frame} or \code{matrix} containing i.e. expressions information. See \link{expressionsTCGA}.}
 
 \item{group.names}{Names of group variable to use in labels of the plot.}
 
@@ -47,6 +48,8 @@ pcaTCGA(
 \item{alpha}{As in \code{ggbiplot}.}
 
 \item{add.lines}{Should axis lines be added to plot.}
+
+\item{ggtheme}{a \code{ggtheme} to be used (set to \code{NULL}, if using \pkg{ggthemr} package)}
 
 \item{...}{Further arguments passed to \link{prcomp}.}
 }
@@ -80,8 +83,8 @@ library(dplyr)
 ## RNASeq expressions
 library(RTCGA.rnaseq)
 expressionsTCGA(BRCA.rnaseq, OV.rnaseq, HNSC.rnaseq) \%>\%
-	rename(cohort = dataset) \%>\%	
-	filter(substr(bcr_patient_barcode, 14, 15) == "01") -> BRCA.OV.HNSC.rnaseq.cancer
+  rename(cohort = dataset) \%>\%  
+  filter(substr(bcr_patient_barcode, 14, 15) == "01") -> BRCA.OV.HNSC.rnaseq.cancer
 
 pcaTCGA(BRCA.OV.HNSC.rnaseq.cancer, "cohort")
 pcaTCGA(BRCA.OV.HNSC.rnaseq.cancer, "cohort", add.lines = FALSE)
@@ -92,13 +95,14 @@ pca.rnaseq$pca
 
 }
 \seealso{
-\pkg{RTCGA} website \href{http://rtcga.github.io/RTCGA/Visualizations.html}{http://rtcga.github.io/RTCGA/Visualizations.html}.
+\pkg{RTCGA} website \href{http://rtcga.github.io/RTCGA/articles/Visualizations.html}{http://rtcga.github.io/RTCGA/articles/Visualizations.html}.
 
 Other RTCGA: 
 \code{\link{RTCGA-package}},
 \code{\link{boxplotTCGA}()},
 \code{\link{checkTCGA}()},
 \code{\link{convertTCGA}()},
+\code{\link{createTCGA}()},
 \code{\link{datasetsTCGA}},
 \code{\link{downloadTCGA}()},
 \code{\link{expressionsTCGA}()},

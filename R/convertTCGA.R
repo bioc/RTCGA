@@ -1,5 +1,5 @@
 ## RTCGA package for R
-#' @title Convert data from RTCGA family to Bioconductor classes
+#' @title Convert Data from RTCGA Family to Bioconductor Classes
 #'
 #' @description Functions use \pkg{Biobase} (\href{http://bioconductor.org/packages/release/bioc/html/Biobase.html}{http://bioconductor.org/packages/release/bioc/html/Biobase.html}) package to transform
 #' data from packages from RTCGA data family to Bioconductor classes (\pkg{RTCGA.rnaseq}, \pkg{RTCGA.RPPA}, \pkg{RTCGA.PANCAN12},
@@ -49,7 +49,7 @@
 #' 
 #' @seealso 
 #' 
-#' \pkg{RTCGA} website \href{http://rtcga.github.io/RTCGA/Download.html}{http://rtcga.github.io/RTCGA/Download.html}.
+#' \pkg{RTCGA} website \href{http://rtcga.github.io/RTCGA/}{http://rtcga.github.io/RTCGA/}.
 #' 
 #' @examples 
 #' 

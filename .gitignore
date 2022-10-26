@@ -8,6 +8,7 @@ data2/
 data/
 readTCGA_examples_section.R
 readTCGA_examples_section2.R
+test_createTCGA/
 
 # Example code in package build process
 *-Ex.R
@@ -57,3 +58,6 @@ vignettes/*.pdf
 *.xdy
 *.tdo
 .Rproj.user
+
+_site/
+hre/

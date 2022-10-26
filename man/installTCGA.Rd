@@ -2,24 +2,26 @@
 % Please edit documentation in R/installTCGA.R
 \name{installTCGA}
 \alias{installTCGA}
-\title{Install packages from RTCGA family}
+\title{Install Data Packages from RTCGA Family}
 \usage{
 installTCGA(
-  packages = c("RTCGA.clinical", "RTCGA.mutations", "RTCGA.rnaseq", "RTCGA.RPPA",
-    "RTCGA.mRNA", "RTCGA.CNV", "RTCGA.miRNASeq", "RTCGA.PANCAN12", "RTCGA.methylation"),
+  packages = c("RTCGA.clinical.20160128", "RTCGA.mutations.20160128",
+    "RTCGA.rnaseq.20160128", "RTCGA.RPPA.20160128", "RTCGA.mRNA.20160128",
+    "RTCGA.CNV.20160128", "RTCGA.miRNASeq.20160128", "RTCGA.PANCAN12.20160128",
+    "RTCGA.methylation.20160128"),
   build_vignettes = TRUE,
   ...
 )
 }
 \arguments{
-\item{packages}{A character specifing the names of the data packages to be installed. By default installs all packages.}
+\item{packages}{A character specifing the names of the data packages to be installed. By default installs all packages from \code{.20160128} release.}
 
 \item{build_vignettes}{Should vignettes be build.}
 
 \item{...}{Further arguments passed to \link[devtools]{install_github}.}
 }
 \description{
-Function installs data packages from \href{https://github.com/RTCGA/}{https://github.com/RTCGA/}. Packages are listed \link{datasetsTCGA}.
+Function installs data packages from \href{https://github.com/RTCGA/}{https://github.com/RTCGA/}. Packages are listed in \link{datasetsTCGA}.
 }
 \section{Issues}{
 
@@ -32,8 +34,8 @@ clear please post an issue on
 \examples{
 
 \dontrun{
-installTCGA()
-installTCGA('RTCGA.clinical')
+installTCGA() # it installs all!!! of them
+installTCGA('RTCGA.clinical.20160128')
 }
 
 }
@@ -45,6 +47,7 @@ Other RTCGA:
 \code{\link{boxplotTCGA}()},
 \code{\link{checkTCGA}()},
 \code{\link{convertTCGA}()},
+\code{\link{createTCGA}()},
 \code{\link{datasetsTCGA}},
 \code{\link{downloadTCGA}()},
 \code{\link{expressionsTCGA}()},

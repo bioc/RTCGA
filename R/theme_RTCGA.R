@@ -1,5 +1,5 @@
 ## RTCGA package for R
-#' @title RTCGA Theme For ggplot2
+#' @title RTCGA Theme for ggplot2
 #'
 #' @description Additional \pkg{RTCGA} theme for \link[ggplot2]{ggtheme}, based on \link[ggthemes]{theme_pander}.
 #'  
@@ -26,7 +26,7 @@
 #' 
 #' @seealso 
 #' 
-#' \pkg{RTCGA} website \href{http://rtcga.github.io/RTCGA/Visualizations.html}{http://rtcga.github.io/RTCGA/Visualizations.html}.
+#' \pkg{RTCGA} website \href{http://rtcga.github.io/RTCGA/articles/Visualizations.html}{http://rtcga.github.io/RTCGA/articles/Visualizations.html}.
 #' 
 #' @family RTCGA
 #' @rdname theme_RTCGA

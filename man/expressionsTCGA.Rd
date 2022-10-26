@@ -130,13 +130,14 @@ expressionsTCGA(ACC.miRNASeq.bcr, CESC.miRNASeq.bcr, CHOL.miRNASeq.bcr,
 
 }
 \seealso{
-\pkg{RTCGA} website \href{http://rtcga.github.io/RTCGA/Visualizations.html}{http://rtcga.github.io/RTCGA/Visualizations.html}.
+\pkg{RTCGA} website \href{http://rtcga.github.io/RTCGA/articles/Visualizations.html}{http://rtcga.github.io/RTCGA/articles/Visualizations.html}.
 
 Other RTCGA: 
 \code{\link{RTCGA-package}},
 \code{\link{boxplotTCGA}()},
 \code{\link{checkTCGA}()},
 \code{\link{convertTCGA}()},
+\code{\link{createTCGA}()},
 \code{\link{datasetsTCGA}},
 \code{\link{downloadTCGA}()},
 \code{\link{heatmapTCGA}()},

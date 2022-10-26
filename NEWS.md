@@ -1,3 +1,35 @@
+# Version 1.27.1
+
+- Fixed http and https calls to https://gdac.broadinstitute.org/
+
+# Version 1.23.1
+
+- Merged Bioconductor git repo with GitHub git repo
+
+# Version 1.7.1
+
+- New version of RTCGA website - http://rtcga.github.io/RTCGA/, based on [pkgdown](http://github.com/hadley/pkgdown/)
+- Improved RTCGA workflow graph - https://raw.githubusercontent.com/RTCGA/RTCGA/master/RTCGA_workflow.png
+- Added `createTCGA` function which can now create RTCGA.dataType.releaseDate-like data packages. Most of the function result will be published in ExperimentHub on Bioconductor.
+- Check new data packages with datasets from `2016-01-28` release date from TCGA
+    - https://github.com/RTCGA/RTCGA.clinical.20160128
+    - https://github.com/RTCGA/RTCGA.mutations.20160128
+    - https://github.com/RTCGA/RTCGA.rnaseq.20160128
+    - https://github.com/RTCGA/RTCGA.RPPA.20160128
+    - https://github.com/RTCGA/RTCGA.CNV.20160128
+    - https://github.com/RTCGA/RTCGA.mRNA.20160128
+    - https://github.com/RTCGA/RTCGA.miRNASeq.20160128
+    - https://github.com/RTCGA/RTCGA.methylation.20160128
+
+- `readTCGA` now has a `method` for `CNV` datasets.
+- You can now download packages from `.20160128` release with `installTCGA` function, which downloads them all by default.
+- Improved documentation titles.
+- Improved manual page of `installTCGA` after adding packages from `2016-01-08`.
+- Provided wider explanation for `?datasetsTCGA` after adding packages from `2016-01-08`.
+- Extended biocViews.
+- Shortened examples and improved their code appearance.
+- Subsitute old URLs in manual pages with new ones - RTCGA website has new architecture.
+
 # Version 1.3.3
 
 - Fixed examples in `expressionsTCGA` that broke after changes in dplyr, while moving to `tibble`s.

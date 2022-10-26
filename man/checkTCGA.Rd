@@ -2,19 +2,19 @@
 % Please edit documentation in R/checkTCGA.R
 \name{checkTCGA}
 \alias{checkTCGA}
-\title{Information about datasets from TCGA project}
+\title{Information About Datasets from TCGA Project}
 \usage{
 checkTCGA(what, cancerType, date = NULL)
 }
 \arguments{
 \item{what}{One of \code{DataSets} or \code{Dates}.}
 
-\item{cancerType}{A character of length 1 containing abbreviation (Cohort code - \href{http://gdac.broadinstitute.org/}{http://gdac.broadinstitute.org/})
+\item{cancerType}{A character of length 1 containing abbreviation (Cohort code - \href{https://gdac.broadinstitute.org/}{https://gdac.broadinstitute.org/})
 of types of cancers to check for.}
 
 \item{date}{A \code{NULL} or character specifying from which date informations should be checked.
 By default (\code{date = NULL}) the newest available date is used. All available dates can be checked on 
-\href{http://gdac.broadinstitute.org/runs/}{http://gdac.broadinstitute.org/runs/} or by using \code{checkTCGA('Dates')} 
+\href{https://gdac.broadinstitute.org/runs/}{https://gdac.broadinstitute.org/runs/} or by using \code{checkTCGA('Dates')} 
 function. Required format \code{'YYYY-MM-DD'}.}
 }
 \value{
@@ -50,10 +50,10 @@ clear please post an issue on
 ############################# 
 
 # names for current release date and cohort
-checkTCGA('DataSets', 'BRCA' )
+checkTCGA('DataSets', 'BRCA')
 \dontrun{
-checkTCGA('DataSets', 'OV', tail(checkTCGA('Dates'))[3] )
-#checkTCGA('DataSets', 'OV', checkTCGA('Dates')[5] ) # error
+checkTCGA('DataSets', 'OV', tail(checkTCGA('Dates'))[3])
+#checkTCGA('DataSets', 'OV', checkTCGA('Dates')[5]) # error
 }
 # dates of TCGA datasets' releases.
 checkTCGA('Dates')
@@ -75,12 +75,13 @@ cancerTypes \%>\% sapply(function(element){
 }
 }
 \seealso{
-\pkg{RTCGA} website \href{http://rtcga.github.io/RTCGA/Download.html}{http://rtcga.github.io/RTCGA/Download.html}.
+\pkg{RTCGA} website \href{https://rtcga.github.io/RTCGA/}{https://rtcga.github.io/RTCGA/}.
 
 Other RTCGA: 
 \code{\link{RTCGA-package}},
 \code{\link{boxplotTCGA}()},
 \code{\link{convertTCGA}()},
+\code{\link{createTCGA}()},
 \code{\link{datasetsTCGA}},
 \code{\link{downloadTCGA}()},
 \code{\link{expressionsTCGA}()},

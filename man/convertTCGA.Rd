@@ -3,7 +3,7 @@
 \name{convertTCGA}
 \alias{convertTCGA}
 \alias{convertPANCAN12}
-\title{Convert data from RTCGA family to Bioconductor classes}
+\title{Convert Data from RTCGA Family to Bioconductor Classes}
 \usage{
 convertTCGA(dataSet, dataType = "expression")
 
@@ -91,12 +91,13 @@ convertTCGA(BRCA.CNV, "CNV") -> BRCA.CNV_GRanges
 
 }
 \seealso{
-\pkg{RTCGA} website \href{http://rtcga.github.io/RTCGA/Download.html}{http://rtcga.github.io/RTCGA/Download.html}.
+\pkg{RTCGA} website \href{http://rtcga.github.io/RTCGA/}{http://rtcga.github.io/RTCGA/}.
 
 Other RTCGA: 
 \code{\link{RTCGA-package}},
 \code{\link{boxplotTCGA}()},
 \code{\link{checkTCGA}()},
+\code{\link{createTCGA}()},
 \code{\link{datasetsTCGA}},
 \code{\link{downloadTCGA}()},
 \code{\link{expressionsTCGA}()},

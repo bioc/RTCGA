@@ -1,9 +1,15 @@
 Package: RTCGA
 Title: The Cancer Genome Atlas Data Integration
-Version: 1.27.0
-Date: 2016-09-29
-Author: Marcin Kosinski <m.p.kosinski@gmail.com>, Przemyslaw Biecek
-    <przemyslaw.biecek@gmail.com>
+Version: 1.27.1
+Date: 2022-10-26
+Authors@R: c(
+    person("Marcin", "Kosinski", role = c("aut", "cre"),
+    email = "m.p.kosinski@gmail.com"),
+    person("Przemyslaw", "Biecek", role = c("ctb"),
+    email = "przemyslaw.biecek@gmail.com"),
+    person("Witold", "Chodor", role = c("ctb"),
+    email = "witoldchodor@gmail.com")
+    )
 Maintainer: Marcin Kosinski <m.p.kosinski@gmail.com>
 Description: The Cancer Genome Atlas (TCGA) Data Portal provides a
     platform for researchers to search, download, and analyze data
@@ -26,6 +32,7 @@ Depends:
     R (>= 3.3.0)
 Imports:
     XML,
+    RCurl,
     assertthat,
     stringi,
     rvest,
@@ -39,12 +46,13 @@ Imports:
     ggthemes,
     viridis,
     knitr,
-    scales
+    scales,
+    rmarkdown,
+    htmltools
 Suggests:
     devtools,
     testthat,
     pander,
-    rmarkdown,
     Biobase,
     GenomicRanges,
     IRanges,
@@ -57,11 +65,19 @@ Suggests:
     RTCGA.miRNASeq,
     RTCGA.methylation,
     RTCGA.CNV,
+    RTCGA.rnaseq.20160128,
+    RTCGA.clinical.20160128,
+    RTCGA.mutations.20160128,
+    RTCGA.RPPA.20160128,
+    RTCGA.mRNA.20160128,
+    RTCGA.miRNASeq.20160128,
+    RTCGA.methylation.20160128,
+    RTCGA.CNV.20160128,
     RTCGA.PANCAN12,
     magrittr,
     tidyr
 Repository: Bioconductor
-biocViews: ImmunoOncology, Software, DataImport, DataRepresentation, Preprocessing, RNASeq
+biocViews: ImmunoOncology, Software, DataImport, DataRepresentation, Preprocessing, RNASeq, Survival, DNAMethylation, PrincipalComponent, Visualization
 VignetteBuilder: knitr
 NeedsCompilation: no
 RoxygenNote: 7.1.1

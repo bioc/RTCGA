@@ -15,10 +15,11 @@
 #' @param return.survfit Should return survfit object additionaly to survival plot?
 #' @param ... Further arguments passed to \link[survminer]{ggsurvplot}.
 #' @param risk.table.y.text Whether to show long strata names in legend of the risk table.
+#' @template roxlate-ggtheme
 #' 
 #' @seealso 
 #' 
-#' \pkg{RTCGA} website \href{http://rtcga.github.io/RTCGA/Visualizations.html}{http://rtcga.github.io/RTCGA/Visualizations.html}.
+#' \pkg{RTCGA} website \href{http://rtcga.github.io/RTCGA/articles/Visualizations.html}{http://rtcga.github.io/RTCGA/articles/Visualizations.html}.
 #' 
 #' @examples 
 #' 
@@ -26,6 +27,12 @@
 #' library(RTCGA.clinical)
 #' survivalTCGA(BRCA.clinical, OV.clinical, extract.cols = "admin.disease_code") -> BRCAOV.survInfo
 #' 
+#' ## Kaplan-Meier Survival Curves
+#' kmTCGA(BRCAOV.survInfo, explanatory.names = "admin.disease_code",  pval = TRUE)
+#' 
+#' kmTCGA(BRCAOV.survInfo, explanatory.names = "admin.disease_code", main = "",
+#'        xlim = c(0,4000))
+#'        
 #' # first munge data, then extract survival info
 #' library(dplyr)
 #' BRCA.clinical %>%
@@ -41,13 +48,9 @@
 #'                c("chemotherapy", "hormone therapy")) %>%
 #'     rename(therapy = patient.drugs.drug.therapy_types.therapy_type) -> BRCA.survInfo.chemo
 #' 
-#' ## Kaplan-Meier Survival Curves
-#' kmTCGA(BRCAOV.survInfo, explanatory.names = "admin.disease_code",  pval = TRUE)
 #' 
-#' kmTCGA(BRCAOV.survInfo, explanatory.names = "admin.disease_code", main = "",
-#'        xlim = c(0,4000))
-#'  
-#' kmTCGA(BRCA.survInfo.chemo, explanatory.names = "therapy", xlim = c(0, 3000), conf.int = FALSE)
+#' kmTCGA(BRCA.survInfo.chemo, explanatory.names = "therapy",
+#'        xlim = c(0, 3000), conf.int = FALSE)
 #' 
 #' @section Issues:
 #' 
@@ -71,6 +74,7 @@ kmTCGA <- function(x,
 									conf.int = TRUE,
 									return.survfit = FALSE, 
 									pval = FALSE,
+									ggtheme = theme_RTCGA(),
 									...) {
 	assert_that(is.data.frame(x))
 	assert_that(all(c(times, status, ifelse(explanatory.names == "1", times, explanatory.names)) %in% names(x)))
@@ -90,7 +94,7 @@ kmTCGA <- function(x,
 						 pval = pval,
 						 main = main,
 						 risk.table.y.text = FALSE,
-						 ggtheme = theme_RTCGA(),
+						 ggtheme = ggtheme,
 						 ...) -> survplot
 	# customize with RTCGA theme
   #survplot$table <- survplot$table + theme_RTCGA()

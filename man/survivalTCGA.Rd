@@ -2,7 +2,7 @@
 % Please edit documentation in R/survivalTCGA.R
 \name{survivalTCGA}
 \alias{survivalTCGA}
-\title{Extract Survival Information From RTCGA.clinical Datasets}
+\title{Extract Survival Information from Datasets Included in RTCGA.clinical and RTCGA.clinical.20160128 Packages}
 \usage{
 survivalTCGA(
   ...,
@@ -60,6 +60,12 @@ clear please post an issue on
 library(RTCGA.clinical)
 survivalTCGA(BRCA.clinical, OV.clinical, extract.cols = "admin.disease_code") -> BRCAOV.survInfo
 
+## Kaplan-Meier Survival Curves
+kmTCGA(BRCAOV.survInfo, explanatory.names = "admin.disease_code",  pval = TRUE)
+
+kmTCGA(BRCAOV.survInfo, explanatory.names = "admin.disease_code", main = "",
+       xlim = c(0,4000))
+       
 # first munge data, then extract survival info
 library(dplyr)
 BRCA.clinical \%>\%
@@ -75,23 +81,19 @@ BRCA.clinical \%>\%
                c("chemotherapy", "hormone therapy")) \%>\%
     rename(therapy = patient.drugs.drug.therapy_types.therapy_type) -> BRCA.survInfo.chemo
 
-## Kaplan-Meier Survival Curves
-kmTCGA(BRCAOV.survInfo, explanatory.names = "admin.disease_code",  pval = TRUE)
 
-kmTCGA(BRCAOV.survInfo, explanatory.names = "admin.disease_code", main = "",
-       xlim = c(0,4000))
- 
-kmTCGA(BRCA.survInfo.chemo, explanatory.names = "therapy", xlim = c(0, 3000), conf.int = FALSE)
-
+kmTCGA(BRCA.survInfo.chemo, explanatory.names = "therapy",
+       xlim = c(0, 3000), conf.int = FALSE)
 }
 \seealso{
-\pkg{RTCGA} website \href{http://rtcga.github.io/RTCGA/Visualizations.html}{http://rtcga.github.io/RTCGA/Visualizations.html}.
+\pkg{RTCGA} website \href{http://rtcga.github.io/RTCGA/articles/Visualizations.html}{http://rtcga.github.io/RTCGA/articles/Visualizations.html}.
 
 Other RTCGA: 
 \code{\link{RTCGA-package}},
 \code{\link{boxplotTCGA}()},
 \code{\link{checkTCGA}()},
 \code{\link{convertTCGA}()},
+\code{\link{createTCGA}()},
 \code{\link{datasetsTCGA}},
 \code{\link{downloadTCGA}()},
 \code{\link{expressionsTCGA}()},

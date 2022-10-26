@@ -2,7 +2,7 @@
 % Please edit documentation in R/theme_RTCGA.R
 \name{theme_RTCGA}
 \alias{theme_RTCGA}
-\title{RTCGA Theme For ggplot2}
+\title{RTCGA Theme for ggplot2}
 \usage{
 theme_RTCGA(base_size = 11, base_family = "", ...)
 }
@@ -33,13 +33,14 @@ kmTCGA(BRCAOV.survInfo, explanatory.names = "admin.disease_code",
 					 
 }
 \seealso{
-\pkg{RTCGA} website \href{http://rtcga.github.io/RTCGA/Visualizations.html}{http://rtcga.github.io/RTCGA/Visualizations.html}.
+\pkg{RTCGA} website \href{http://rtcga.github.io/RTCGA/articles/Visualizations.html}{http://rtcga.github.io/RTCGA/articles/Visualizations.html}.
 
 Other RTCGA: 
 \code{\link{RTCGA-package}},
 \code{\link{boxplotTCGA}()},
 \code{\link{checkTCGA}()},
 \code{\link{convertTCGA}()},
+\code{\link{createTCGA}()},
 \code{\link{datasetsTCGA}},
 \code{\link{downloadTCGA}()},
 \code{\link{expressionsTCGA}()},
