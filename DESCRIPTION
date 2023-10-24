@@ -1,6 +1,6 @@
 Package: RTCGA
 Title: The Cancer Genome Atlas Data Integration
-Version: 1.31.0
+Version: 1.32.0
 Date: 2022-10-28
 Authors@R: c(
     person("Marcin", "Kosinski", role = c("aut", "cre"),
