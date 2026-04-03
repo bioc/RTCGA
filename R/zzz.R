@@ -1,8 +1,12 @@
 .RTCGAEnv <- new.env()
 
 .onAttach <- function(...) {
-	packageStartupMessage("Welcome to the RTCGA (version: ", utils::packageVersion("RTCGA"), "). Read more about the project under https://rtcga.github.io/RTCGA/")
+#	packageStartupMessage("Welcome to the RTCGA (version: ", utils::packageVersion("RTCGA"), "). Read more about the project under https://rtcga.github.io/RTCGA/")
 	
+    msg <- sprintf(
+        "Package '%s' is deprecated and will be removed from Bioconductor
+         version %s", pkgname, "3.24")
+    .Deprecated(msg=paste(strwrap(msg, exdent=2), collapse="\n"))
 	
 	# assign( x = '.gdacContent', value = readLines( 'https://gdac.broadinstitute.org/runs/' ), envir = .RTCGAEnv ) assign( x =
 	# '.lastReleaseDate', value = stri_extract( grep( pattern= 'stddata__20', x = get( '.gdacContent', envir = .RTCGAEnv), value =
