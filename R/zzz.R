@@ -1,6 +1,6 @@
 .RTCGAEnv <- new.env()
 
-.onAttach <- function(...) {
+.onAttach <- function(libname, pkgname) {
 #	packageStartupMessage("Welcome to the RTCGA (version: ", utils::packageVersion("RTCGA"), "). Read more about the project under https://rtcga.github.io/RTCGA/")
 	
     msg <- sprintf(
